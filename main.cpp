@@ -69,7 +69,7 @@ static void udp_mirror(int incoming_port, ClientSet *registrations) {
                 mirror.send(std::get<0>(client), std::get<1>(client), data);
             }
 
-            cout_locked() << "Re-broadcast datagram " << data.size() << " bytes to " << registered.size() << " clients\n";
+            // cout_locked() << "Re-broadcast datagram " << data.size() << " bytes to " << registered.size() << " clients\n";
         }
     } catch (const std::exception& e) {
         cerr_locked() << "Unhandled exception in receiver: " << e.what() << std::endl;
