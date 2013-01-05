@@ -12,7 +12,7 @@ using scoped_lock = std::lock_guard<std::mutex>;
 namespace std {
     template <>
     struct hash<Client> {
-        size_t operator()(const Client& client) {
+        size_t operator()(const Client& client) const {
             return hash<string>()(get<0>(client)) * 31 +
                    hash<int>()(get<1>(client));
         }
