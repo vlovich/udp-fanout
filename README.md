@@ -1,9 +1,10 @@
 This is similar to samplicate.  It has fewer options, but supports dynamic registration/deregistration via an admin port.
 
-Given a source port (currently hard-coded to syslog port of 514), it will copy all incoming packets
-to the registered listeners.
+Given a source port it will copy all incoming packets to the registered listeners.
+The admin port receives control messages.
 
-The admin port (currently hard-coded to 10000) receives control messages.
+To start:
+./udp-fanout 514 10000
 
 To register a listener:
 
